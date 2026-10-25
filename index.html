@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#063f43">
+  <title>CLIMORA | Campus Sustainability Twin</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="login-screen" id="loginScreen">
+    <div class="login-brand">
+      <div class="brand-mark"><span>✦</span></div>
+      <div class="brand-name">CLIMORA</div>
+      <p>Powering a smarter, greener future.</p>
+      <div class="login-planet" aria-hidden="true">
+        <div class="planet-orbit"></div><div class="planet-land land-one"></div><div class="planet-land land-two"></div>
+        <div class="planet-leaf">♧</div>
+      </div>
+      <div class="login-foot">SUSTAINABLE · INTELLIGENT · INNOVATIVE · RESPONSIBLE</div>
+    </div>
+    <form class="login-card" id="loginForm">
+      <div class="eyebrow">CAMPUS SUSTAINABILITY PLATFORM</div>
+      <h1>Welcome back</h1>
+      <p class="muted">Sign in to your campus sustainability twin.</p>
+      <label for="email">Email address</label>
+      <input id="email" type="email" placeholder="you@campus.edu" value="admin@climora.demo" required>
+      <label for="password">Password</label>
+      <input id="password" type="password" placeholder="Enter password" value="climora123" required>
+      <div class="login-row"><label class="check-label"><input type="checkbox" checked> Remember me</label><a href="#" id="forgotLink">Forgot password?</a></div>
+      <button class="primary-btn full" type="submit">Sign in <span>→</span></button>
+      <p class="login-hint">Demo access: use any valid email and password.</p>
+    </form>
+  </div>
+
+  <div class="app-shell hidden" id="appShell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand-lockup" href="#" data-page="dashboard">
+        <div class="mini-mark">♧</div><div><strong>CLIMORA</strong><small>Greener campuses, smarter choices</small></div>
+      </a>
+      <div class="campus-select"><span class="campus-icon">▦</span><select id="campusSelect" aria-label="Select campus"><option>Greenfield Engineering College</option><option>North Campus</option><option>Innovation Campus</option></select><span>⌄</span></div>
+      <div class="nav-label">WORKSPACE</div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-item active" data-page="dashboard"><span>▦</span> Dashboard</button>
+        <button class="nav-item" data-page="campus"><span>⌖</span> Campus map</button>
+        <button class="nav-item" data-page="energy"><span>ϟ</span> Energy</button>
+        <button class="nav-item" data-page="water"><span>♢</span> Water</button>
+        <button class="nav-item" data-page="environment"><span>♧</span> Environment</button>
+        <button class="nav-item" data-page="buildings"><span>▤</span> Buildings</button>
+        <button class="nav-item" data-page="alerts"><span>♧</span> Alerts <i class="nav-count">3</i></button>
+        <button class="nav-item" data-page="reports"><span>▧</span> Reports</button>
+        <button class="nav-item" data-page="recommendations"><span>✧</span> Recommendations</button>
+      </nav>
+      <div class="sidebar-bottom"><div class="leaf-badge">♧</div><div><strong>Sustainable today</strong><small>Stronger tomorrow</small></div></div>
+      <div class="sidebar-user"><div class="avatar">HC</div><div><strong id="sideUser">Campus Admin</strong><small>Administrator</small></div><button id="logoutBtn" title="Sign out" aria-label="Sign out">↪</button></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Toggle navigation">☰</button>
+        <div class="breadcrumb"><span>Workspace</span><b>/</b><strong id="crumb">Dashboard</strong></div>
+        <div class="top-actions"><span class="live-pill"><i></i> Demo data</span><button class="icon-btn" id="topAlerts" title="Open alerts">♧<em></em></button><button class="profile-btn" id="profileBtn"><span class="avatar">HC</span><span class="profile-name">Campus Admin</span><span>⌄</span></button></div>
+      </header>
+      <div class="page-wrap">
+        <section class="page active" id="page-dashboard">
+          <div class="page-heading"><div><div class="eyebrow">CAMPUS OVERVIEW</div><h1>Welcome to CLIMORA <span class="wave">✦</span></h1><p>Your campus sustainability twin at a glance.</p></div><div class="date-chip"><span>▦</span><div><strong id="todayDate">22 Oct 2026</strong><small id="todayTime">Updated just now</small></div></div></div>
+          <div class="metric-grid">
+            <article class="metric-card"><div class="metric-top"><span class="metric-icon green">ϟ</span><span class="trend good">↓ 12%</span></div><p>Energy consumption</p><div class="metric-value"><strong id="energyValue">1,240</strong><span>kWh</span></div><div class="metric-bottom"><small>vs. last week</small><svg class="sparkline" viewBox="0 0 100 28"><polyline points="0,22 12,18 24,21 36,12 48,16 60,8 72,12 84,4 100,7"/></svg></div></article>
+            <article class="metric-card"><div class="metric-top"><span class="metric-icon blue">♢</span><span class="trend good">↓ 8%</span></div><p>Water usage</p><div class="metric-value"><strong id="waterValue">48,500</strong><span>L</span></div><div class="metric-bottom"><small>vs. last week</small><svg class="sparkline blue-line" viewBox="0 0 100 28"><polyline points="0,22 12,20 24,13 36,16 48,10 60,14 72,7 84,10 100,4"/></svg></div></article>
+            <article class="metric-card"><div class="metric-top"><span class="metric-icon mint">♧</span><span class="status good-text">● Good</span></div><p>Air quality (AQI)</p><div class="metric-value"><strong id="aqiValue">42</strong></div><div class="metric-bottom"><small>Campus average</small><svg class="sparkline mint-line" viewBox="0 0 100 28"><polyline points="0,12 12,14 24,8 36,11 48,17 60,12 72,15 84,10 100,12"/></svg></div></article>
+            <article class="metric-card"><div class="metric-top"><span class="metric-icon purple">♨</span><span class="status good-text">● Normal</span></div><p>Temperature</p><div class="metric-value"><strong id="tempValue">28</strong><span>°C</span></div><div class="metric-bottom"><small>Outdoor average</small><svg class="sparkline purple-line" viewBox="0 0 100 28"><polyline points="0,18 12,20 24,13 36,15 48,10 60,16 72,11 84,14 100,8"/></svg></div></article>
+          </div>
+          <div class="dashboard-grid">
+            <section class="panel campus-panel"><div class="panel-heading"><div><h2>Campus digital twin</h2><p>Explore key buildings and live campus indicators</p></div><button class="text-btn" data-go="campus">Open campus map ↗</button></div><div class="campus-scene"><div class="scene-sun"></div><div class="scene-road road-a"></div><div class="scene-road road-b"></div><div class="scene-lake"></div><div class="tree t1"></div><div class="tree t2"></div><div class="tree t3"></div><div class="tree t4"></div><div class="tree t5"></div><div class="building b1"><span>LIBRARY</span></div><div class="building b2"><span>ACADEMIC BLOCK</span></div><div class="building b3"><span>HOSTEL</span></div><div class="building b4"><span>SPORTS COMPLEX</span></div><div class="building b5"><span>CAFETERIA</span></div><div class="building b6"><span>ADMIN</span></div><button class="map-pin pin-one" data-building="Library"><i></i> Library <small>Energy 12%</small></button><button class="map-pin pin-two" data-building="Academic Block"><i></i> Academic Block <small>Energy 15%</small></button><button class="map-pin pin-three" data-building="Hostel"><i></i> Hostel <small>Energy 10%</small></button><button class="map-pin pin-four" data-building="Sports Complex"><i></i> Sports Complex <small>Energy 8%</small></button><button class="map-pin pin-five" data-building="Cafeteria"><i></i> Cafeteria <small>Energy 11%</small></button><div class="north">N<br>↑</div><div class="scene-legend"><span><i class="dot green-dot"></i> Buildings</span><span><i class="dot blue-dot"></i> Sensors</span><span><i class="dot amber-dot"></i> Energy</span></div></div></section>
+            <section class="panel kpi-panel"><div class="panel-heading"><div><h2>Sustainability KPIs</h2><p>Progress toward campus goals</p></div><button class="dots-btn" aria-label="More options">•••</button></div><div class="kpi-grid"><div class="kpi"><div class="ring ring-green" style="--progress:72"><span>72%</span></div><strong>Renewable energy</strong><small>usage</small></div><div class="kpi"><div class="ring ring-blue" style="--progress:68"><span>68%</span></div><strong>Water</strong><small>conservation</small></div><div class="kpi"><div class="ring ring-purple" style="--progress:65"><span>65%</span></div><strong>Waste</strong><small>reduction</small></div><div class="kpi"><div class="ring ring-teal" style="--progress:78"><span>78%</span></div><strong>Carbon footprint</strong><small>reduction</small></div></div><div class="goal-note"><span>↗</span><div><strong>On track for this quarter</strong><small>2 of 3 sustainability goals improving</small></div></div></section>
+            <section class="panel chart-panel"><div class="panel-heading"><div><h2>Energy consumption trend</h2><p>Daily usage · kWh</p></div><select class="small-select" id="energyRange"><option value="week">This week</option><option value="month">This month</option></select></div><div class="chart" id="energyChart"></div><div class="chart-legend"><i class="dot teal-dot"></i> Energy (kWh) <span class="chart-total">Avg. 1,240 kWh</span></div></section>
+            <section class="panel chart-panel"><div class="panel-heading"><div><h2>Water usage trend</h2><p>Daily consumption · litres</p></div><select class="small-select" id="waterRange"><option value="week">This week</option><option value="month">This month</option></select></div><div class="chart" id="waterChart"></div><div class="chart-legend"><i class="dot blue-dot"></i> Water (litres) <span class="chart-total">Avg. 48,500 L</span></div></section>
+            <section class="panel environment-panel"><div class="panel-heading"><div><h2>Environmental data</h2><p>Latest campus readings</p></div><button class="text-btn" data-go="environment">View all ↗</button></div><div class="environment-grid"><div class="env-item"><span class="env-icon coral">♨</span><div><small>Temperature</small><strong>28°C</strong><em class="good-text">● Normal</em></div></div><div class="env-item"><span class="env-icon aqua">♢</span><div><small>Humidity</small><strong>62%</strong><em class="good-text">● Normal</em></div></div><div class="env-item"><span class="env-icon green">♧</span><div><small>Air quality</small><strong>42 AQI</strong><em class="good-text">● Good</em></div></div><div class="env-item"><span class="env-icon purple">◖))</span><div><small>Noise level</small><strong>55 dB</strong><em class="good-text">● Normal</em></div></div></div></section>
+            <section class="panel alerts-panel"><div class="panel-heading"><div><h2>Recent alerts</h2><p>Items that may need attention</p></div><button class="text-btn" data-go="alerts">View all →</button></div><div id="recentAlerts"></div></section>
+            <section class="panel rec-panel"><div class="panel-heading"><div><h2>Quick recommendations</h2><p>Small actions, measurable impact</p></div><button class="text-btn" data-go="recommendations">View all →</button></div><div id="quickRecommendations"></div></section>
+          </div>
+        </section>
+
+        <section class="page" id="page-campus">
+          <div class="page-heading"><div><div class="eyebrow">SPATIAL OVERVIEW</div><h1>Campus map</h1><p>Explore buildings and review their sustainability status.</p></div><button class="primary-btn" id="refreshCampus">↻ Refresh readings</button></div>
+          <div class="campus-stats"><div class="mini-stat"><span>Buildings monitored</span><strong>6</strong><small>Across the campus</small></div><div class="mini-stat"><span>Connected sensors</span><strong>24 <i class="good-text">● Online</i></strong><small>Sample device status</small></div><div class="mini-stat"><span>Campus energy today</span><strong>1,240 kWh</strong><small class="good-text">↓ 12% vs last week</small></div></div>
+          <section class="panel large-map-panel"><div class="panel-heading"><div><h2>Greenfield campus</h2><p>Select a building pin or a row below to see details.</p></div><div class="map-controls"><input id="buildingSearch" placeholder="Search buildings…" aria-label="Search buildings"><select id="buildingFilter"><option value="all">All buildings</option><option value="good">Good status</option><option value="attention">Needs attention</option></select></div></div><div class="campus-scene large-scene" id="largeCampusScene"><div class="scene-sun"></div><div class="scene-road road-a"></div><div class="scene-road road-b"></div><div class="scene-lake"></div><div class="tree t1"></div><div class="tree t2"></div><div class="tree t3"></div><div class="tree t4"></div><div class="tree t5"></div><div class="building b1"><span>LIBRARY</span></div><div class="building b2"><span>ACADEMIC BLOCK</span></div><div class="building b3"><span>HOSTEL</span></div><div class="building b4"><span>SPORTS COMPLEX</span></div><div class="building b5"><span>CAFETERIA</span></div><div class="building b6"><span>ADMIN</span></div><button class="map-pin pin-one" data-building="Library"><i></i> Library <small>1,240 kWh</small></button><button class="map-pin pin-two" data-building="Academic Block"><i></i> Academic Block <small>1,560 kWh</small></button><button class="map-pin pin-three" data-building="Hostel"><i></i> Hostel <small>980 kWh</small></button><button class="map-pin pin-four" data-building="Sports Complex"><i></i> Sports Complex <small>720 kWh</small></button><button class="map-pin pin-five" data-building="Cafeteria"><i></i> Cafeteria <small>1,110 kWh</small></button><div class="north">N<br>↑</div><div class="scene-legend"><span><i class="dot green-dot"></i> Good</span><span><i class="dot amber-dot"></i> Attention</span><span><i class="dot blue-dot"></i> Sensor</span></div></div><div class="building-detail" id="buildingDetail"><div class="detail-symbol">▤</div><div><strong>Select a building</strong><p>Choose a map pin to view sample building metrics.</p></div></div></section>
+          <section class="panel"><div class="panel-heading"><div><h2>Building directory</h2><p>Sample readings for each monitored area.</p></div></div><div class="table-wrap"><table><thead><tr><th>Building</th><th>Energy today</th><th>Water today</th><th>Air quality</th><th>Status</th><th></th></tr></thead><tbody id="buildingRows"></tbody></table></div></section>
+        </section>
+
+        <section class="page" id="page-energy">
+          <div class="page-heading"><div><div class="eyebrow">RESOURCE MONITORING</div><h1>Energy management</h1><p>Understand electricity demand and identify savings opportunities.</p></div><button class="outline-btn" data-export="energy">↓ Export CSV</button></div>
+          <div class="metric-grid three"><article class="metric-card"><p>Today's consumption</p><div class="metric-value"><strong>1,240</strong><span>kWh</span></div><span class="trend good">↓ 12% vs last week</span></article><article class="metric-card"><p>Renewable contribution</p><div class="metric-value"><strong>72</strong><span>%</span></div><span class="status good-text">● Above target</span></article><article class="metric-card"><p>Estimated energy cost</p><div class="metric-value"><strong>₹9,920</strong></div><span class="muted small-text">At demo rate of ₹8/kWh</span></article></div>
+          <div class="two-col"><section class="panel"><div class="panel-heading"><div><h2>Consumption by day</h2><p>Weekly energy usage</p></div><select class="small-select" id="energyPageRange"><option>Last 7 days</option><option>Last 30 days</option></select></div><div class="chart tall-chart" id="energyDetailChart"></div></section><section class="panel"><div class="panel-heading"><div><h2>Consumption by building</h2><p>Share of today's electricity use</p></div></div><div class="horizontal-bars" id="energyBuildings"></div></section></div>
+          <section class="panel"><div class="panel-heading"><div><h2>Energy-saving opportunities</h2><p>Suggested actions based on sample patterns</p></div><button class="text-btn" data-go="recommendations">Open recommendations →</button></div><div class="opportunity-grid"><div class="opportunity"><span class="op-icon">☼</span><strong>Lighting schedules</strong><p>Review after-hours lighting in common spaces.</p><b>Potential: 8–12%</b></div><div class="opportunity"><span class="op-icon">❄</span><strong>Cooling setpoints</strong><p>Keep AC setpoints within campus policy.</p><b>Potential: 5–8%</b></div><div class="opportunity"><span class="op-icon">ϟ</span><strong>Peak demand</strong><p>Shift flexible loads away from peak periods.</p><b>Potential: 3–6%</b></div></div></section>
+        </section>
+
+        <section class="page" id="page-water">
+          <div class="page-heading"><div><div class="eyebrow">RESOURCE MONITORING</div><h1>Water management</h1><p>Track water use and catch unusual consumption early.</p></div><button class="outline-btn" data-export="water">↓ Export CSV</button></div>
+          <div class="metric-grid three"><article class="metric-card"><p>Today's water usage</p><div class="metric-value"><strong>48,500</strong><span>L</span></div><span class="trend good">↓ 8% vs last week</span></article><article class="metric-card"><p>Conservation target</p><div class="metric-value"><strong>68</strong><span>%</span></div><span class="status good-text">● Progressing</span></article><article class="metric-card"><p>Leak alerts</p><div class="metric-value"><strong id="leakCount">1</strong></div><span class="status warning-text">● Needs inspection</span></article></div>
+          <div class="two-col"><section class="panel"><div class="panel-heading"><div><h2>Water usage trend</h2><p>Daily consumption · litres</p></div></div><div class="chart tall-chart" id="waterDetailChart"></div></section><section class="panel"><div class="panel-heading"><div><h2>Water by area</h2><p>Today's sample usage</p></div></div><div class="horizontal-bars" id="waterBuildings"></div></section></div>
+          <section class="panel"><div class="panel-heading"><div><h2>Water conservation checklist</h2><p>Mark tasks as you complete them.</p></div><span class="completion" id="waterProgress">0 of 4 complete</span></div><div class="task-list" id="waterTasks"></div></section>
+        </section>
+
+        <section class="page" id="page-environment">
+          <div class="page-heading"><div><div class="eyebrow">CAMPUS CONDITIONS</div><h1>Environment monitoring</h1><p>Review air quality, temperature, humidity, and noise levels.</p></div><span class="live-pill"><i></i> Sample sensor readings</span></div>
+          <div class="environment-cards"><article class="env-large"><span class="env-icon coral">♨</span><small>Average temperature</small><strong>28°C</strong><span class="status good-text">● Normal range</span><div class="meter"><i style="width:58%"></i></div><small>Comfort range: 22–30°C</small></article><article class="env-large"><span class="env-icon green">♧</span><small>Air quality index</small><strong>42 AQI</strong><span class="status good-text">● Good</span><div class="meter"><i style="width:28%"></i></div><small>Lower AQI generally indicates cleaner air.</small></article><article class="env-large"><span class="env-icon aqua">♢</span><small>Relative humidity</small><strong>62%</strong><span class="status good-text">● Normal range</span><div class="meter"><i style="width:62%"></i></div><small>Typical comfort target: 40–65%</small></article><article class="env-large"><span class="env-icon purple">◖))</span><small>Ambient noise</small><strong>55 dB</strong><span class="status good-text">● Typical</span><div class="meter"><i style="width:45%"></i></div><small>Review high readings near learning areas.</small></article></div>
+          <section class="panel"><div class="panel-heading"><div><h2>Sensor readings</h2><p>Demonstration data; values are not connected to physical sensors.</p></div><button class="outline-btn" data-export="environment">↓ Export CSV</button></div><div class="table-wrap"><table><thead><tr><th>Sensor</th><th>Location</th><th>Reading</th><th>Last update</th><th>Status</th></tr></thead><tbody><tr><td>TEMP-001</td><td>Academic Block</td><td>28°C</td><td>10:24 AM</td><td><span class="pill good-pill">Normal</span></td></tr><tr><td>AQI-003</td><td>Central Garden</td><td>42 AQI</td><td>10:22 AM</td><td><span class="pill good-pill">Good</span></td></tr><tr><td>HUM-002</td><td>Library</td><td>62%</td><td>10:21 AM</td><td><span class="pill good-pill">Normal</span></td></tr><tr><td>NOISE-004</td><td>Sports Complex</td><td>55 dB</td><td>10:18 AM</td><td><span class="pill good-pill">Typical</span></td></tr></tbody></table></div></section>
+        </section>
+
+        <section class="page" id="page-buildings">
+          <div class="page-heading"><div><div class="eyebrow">CAMPUS ASSETS</div><h1>Buildings</h1><p>Review building-level resource usage and status.</p></div><button class="outline-btn" data-export="buildings">↓ Export CSV</button></div>
+          <section class="panel"><div class="panel-heading"><div><h2>Monitored buildings</h2><p>Choose a building to view its sample resource profile.</p></div><input id="buildingsSearch" class="search-input" placeholder="Search buildings…"></div><div class="building-cards" id="buildingCards"></div></section>
+        </section>
+
+        <section class="page" id="page-alerts">
+          <div class="page-heading"><div><div class="eyebrow">ATTENTION CENTRE</div><h1>Alerts</h1><p>Prioritise conditions that may require investigation.</p></div><button class="outline-btn" id="markAllRead">✓ Mark all reviewed</button></div>
+          <div class="alert-summary"><div><span class="alert-symbol red">♨</span><div><strong id="criticalCount">1</strong><small>High priority</small></div></div><div><span class="alert-symbol amber">ϟ</span><div><strong id="warningCount">2</strong><small>Warnings</small></div></div><div><span class="alert-symbol green">♧</span><div><strong id="resolvedCount">1</strong><small>Improving / reviewed</small></div></div></div>
+          <section class="panel"><div class="panel-heading"><div><h2>All alerts</h2><p>Sample events from campus monitoring.</p></div><select class="small-select" id="alertFilter"><option value="all">All alerts</option><option value="open">Needs review</option><option value="reviewed">Reviewed</option></select></div><div id="allAlerts" class="all-alerts"></div></section>
+        </section>
+
+        <section class="page" id="page-reports">
+          <div class="page-heading"><div><div class="eyebrow">INSIGHTS & EXPORTS</div><h1>Reports</h1><p>Prepare sustainability summaries from the demo dataset.</p></div><button class="primary-btn" id="downloadReport">↓ Download report CSV</button></div>
+          <div class="report-grid"><article class="report-card"><span class="report-icon green">▥</span><h3>Energy summary</h3><p>Daily energy consumption and building-level estimates.</p><button class="outline-btn" data-export="energy">Export data →</button></article><article class="report-card"><span class="report-icon blue">♢</span><h3>Water summary</h3><p>Water use trends and conservation progress.</p><button class="outline-btn" data-export="water">Export data →</button></article><article class="report-card"><span class="report-icon purple">♧</span><h3>Environment summary</h3><p>Latest temperature, AQI, humidity and noise readings.</p><button class="outline-btn" data-export="environment">Export data →</button></article><article class="report-card"><span class="report-icon amber">✧</span><h3>Alerts register</h3><p>Review events, locations, and suggested follow-up actions.</p><button class="outline-btn" data-export="alerts">Export data →</button></article></div>
+          <section class="panel"><div class="panel-heading"><div><h2>Campus performance snapshot</h2><p>Illustrative values for this demonstration.</p></div></div><div class="snapshot-grid"><div><small>Energy saved vs baseline</small><strong>12%</strong><span class="good-text">Improving</span></div><div><small>Water saved vs baseline</small><strong>8%</strong><span class="good-text">Improving</span></div><div><small>Renewable energy share</small><strong>72%</strong><span class="good-text">On track</span></div><div><small>Carbon reduction goal</small><strong>78%</strong><span class="good-text">Progress</span></div></div></section>
+        </section>
+
+        <section class="page" id="page-recommendations">
+          <div class="page-heading"><div><div class="eyebrow">SUGGESTED ACTIONS</div><h1>Recommendations</h1><p>Practical actions to improve campus sustainability.</p></div><span class="live-pill"><i></i> Based on sample data</span></div>
+          <div class="recommendation-list" id="recommendationList"></div>
+        </section>
+      </div>
+      <footer class="footer"><span>© 2026 CLIMORA · Campus Sustainability Twin</span><span><i class="dot green-dot"></i> Demo environment <span class="footer-sep">·</span> Hardware integration not connected</span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
